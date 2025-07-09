@@ -8,14 +8,14 @@ const PhotoGallery = ({ setSelectedPhoto, scrollToSection }) => {
     const loadPhotos = async () => {
       try {
         const photoList = [
-          { id: 1, src: '/image/photos/KakaoTalk_20250622_151501992.jpg', alt: 'Wedding Photo 1' },
-          { id: 2, src: '/image/photos/KakaoTalk_20250622_151501992_01.jpg', alt: 'Wedding Photo 2' },
-          { id: 3, src: '/image/photos/KakaoTalk_20250622_151501992_02.jpg', alt: 'Wedding Photo 3' },
-          { id: 4, src: '/image/photos/KakaoTalk_20250622_151501992_03.jpg', alt: 'Wedding Photo 4' },
-          { id: 5, src: '/image/photos/KakaoTalk_20250622_161431463.jpg', alt: 'Wedding Photo 5' },
-          { id: 6, src: '/image/photos/KakaoTalk_20250622_162958078.jpg', alt: 'Wedding Photo 6' },
-          { id: 7, src: '/image/photos/KakaoTalk_20250622_163115660.jpg', alt: 'Wedding Photo 7' },
-          { id: 8, src: '/image/photos/KakaoTalk_20250622_163407617.jpg', alt: 'Wedding Photo 8' }
+          { id: 1, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_151501992.jpg`, alt: 'Wedding Photo 1' },
+          { id: 2, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_151501992_01.jpg`, alt: 'Wedding Photo 2' },
+          { id: 3, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_151501992_02.jpg`, alt: 'Wedding Photo 3' },
+          { id: 4, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_151501992_03.jpg`, alt: 'Wedding Photo 4' },
+          { id: 5, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_161431463.jpg`, alt: 'Wedding Photo 5' },
+          { id: 6, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_162958078.jpg`, alt: 'Wedding Photo 6' },
+          { id: 7, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_163115660.jpg`, alt: 'Wedding Photo 7' },
+          { id: 8, src: `${import.meta.env.BASE_URL}image/photos/KakaoTalk_20250622_163407617.jpg`, alt: 'Wedding Photo 8' }
         ];
         
         setPhotos(photoList);

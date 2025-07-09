@@ -8,7 +8,7 @@ const MainCover = () => {
       
       <div className="fade-in delay-1">
         <img 
-          src="/image/Title.jpg" 
+          src={`${import.meta.env.BASE_URL}image/Title.jpg`}
           alt="Wedding couple"
           className="main-image"
         />
