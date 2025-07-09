@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {
   MainCover,
   Invitation,
-  WeddingDetails,
   PhotoGallery,
-  FamilyIntroduction,
-  ContactInfo,
   Location,
+  ContactInfo,
   ShareSection
 } from './components/sections';
 import PhotoModal from './components/PhotoModal';
@@ -44,7 +42,7 @@ const WeddingInvitation = () => {
 
   const handleShare = async () => {
     const shareData = {
-      title: '김제현 ♥ 김민경 결혼식 초대',
+      title: '김제현 ♥ 김민경 결혼식',
       text: '2025년 11월 15일 토요일 오후 5시 30분\n가천컨벤션센터 5층 웨딩홀',
       url: window.location.href
     };
@@ -78,16 +76,13 @@ const WeddingInvitation = () => {
 
   return (
     <div className="wedding-container">
-      <MainCover isVisible={isVisible} scrollToSection={scrollToSection} />
-      <Invitation timeUntilWedding={timeUntilWedding} scrollToSection={scrollToSection} />
-      <WeddingDetails scrollToSection={scrollToSection} />
+      <MainCover isVisible={isVisible} />
+      <Invitation timeUntilWedding={timeUntilWedding} />
       <PhotoGallery 
         setSelectedPhoto={setSelectedPhoto} 
-        scrollToSection={scrollToSection} 
       />
-      <FamilyIntroduction scrollToSection={scrollToSection} />
-      <ContactInfo scrollToSection={scrollToSection} />
-      <Location handleMapApp={handleMapApp} scrollToSection={scrollToSection} />
+      <ContactInfo />
+      <Location handleMapApp={handleMapApp} />
       <ShareSection 
         handleShare={handleShare} 
         copyToClipboard={copyToClipboard} 
