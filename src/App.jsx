@@ -27,7 +27,7 @@ const WeddingInvitation = () => {
   };
 
   const handleMapApp = (app) => {
-    const address = '경기 성남시 수정구 성남대로 1342';
+    const address = '가천컨벤션센터';
     const encodedAddress = encodeURIComponent(address);
     
     const mapUrls = {
@@ -65,14 +65,6 @@ const WeddingInvitation = () => {
       setTimeout(() => setCopied(false), 2000);
     });
   };
-
-  const scrollToSection = (index) => {
-    const element = document.getElementById(`section-${index}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
 
   return (
     <div className="wedding-container">
