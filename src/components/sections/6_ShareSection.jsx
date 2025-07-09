@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Camera, Utensils, Car, Clock, MapPin, Info } from 'lucide-react';
+import { Heart, Camera, Utensils, Car} from 'lucide-react';
 
 const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
   const [activeTab, setActiveTab] = useState('photobooth');

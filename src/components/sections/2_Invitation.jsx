@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Invitation = ({ timeUntilWedding, scrollToSection }) => {
+const Invitation = () => {
   return (
     <section id="section-1" className="mobile-section invitation">
       <div className="fade-in">

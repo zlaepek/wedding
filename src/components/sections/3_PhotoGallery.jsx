@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const PhotoGallery = ({ setSelectedPhoto, scrollToSection }) => {
+const PhotoGallery = ({ setSelectedPhoto }) => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {

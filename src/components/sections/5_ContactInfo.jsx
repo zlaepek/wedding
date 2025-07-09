@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ContactModal from '../ContactModal';
 
-const ContactInfo = ({ scrollToSection }) => {
+const ContactInfo = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (

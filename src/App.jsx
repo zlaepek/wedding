@@ -33,7 +33,7 @@ const WeddingInvitation = () => {
     const mapUrls = {
       kakaomap: `https://map.kakao.com/link/search/${encodedAddress}`,
       navermap: `https://map.naver.com/v5/search/${encodedAddress}`,
-      tmap: `https://tmap.life/route/search?goalname=${encodedAddress}`,
+      tmap: `https://tmap.life/route/search?name=${encodedAddress}`,
       googlemap: `https://maps.google.com/maps?q=${encodedAddress}`
     };
     
