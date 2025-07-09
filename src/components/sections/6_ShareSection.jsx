@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Camera, Utensils, Car} from 'lucide-react';
+import { Camera, Utensils, Car} from 'lucide-react';
 
 const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
   const [activeTab, setActiveTab] = useState('photobooth');
@@ -14,17 +14,17 @@ const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
     photobooth: {
       title: '포토부스',
       message: '웨딩홀 입구에서 포토부스를 운영합니다.\n소중한 순간을 기록해보세요.',
-      info: '운영시간: 오후 4:30 - 7:00\n위치: 가천컨벤션센터 5층 로비'
+      info: ''//'운영시간: 오후 4:30 - 7:00\n위치: 가천컨벤션센터 5층 로비'
     },
     dining: {
       title: '식사 안내',
       message: '결혼식 후 스테이크 정식을 준비했습니다.\n맛있는 식사와 함께 축하해 주세요.',
-      info: '식사시간: 오후 6:00 - 8:00\n위치: 식장 윗층'
+      info: '위치: 6층 (식장 윗층)'//'식사시간: 오후 6:00 - 8:00\n위치: 식장 윗층'
     },
     parking: {
       title: '주차 안내',
       message: '지하 주차장을 무료로 이용하실 수 있습니다.\n주차권은 별도로 받으실 필요 없습니다.',
-      info: '주차위치: 지하 4층 주차장\n이용시간: 오후 4:00 - 9:00\n주차요금: 무료'
+      info: '주차위치: 지하 3층 주차장\n 주차요금: 무료'
     }
   };
 
@@ -83,7 +83,7 @@ const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
           
           <div className="final-date-container">
             <div className="final-date">25</div>
-            <div className="final-month">NOVEMBER</div>
+            <div className="final-date">11</div>
             <div className="final-date">15</div>
           </div>
           
@@ -106,17 +106,6 @@ const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
               >
                 {copied ? '복사됨!' : '링크 복사'}
               </button>
-            </div>
-          </div>
-          
-          <div className="fade-in delay-2">
-            <div className="thank-you-message">
-              <Heart size={16} style={{ color: '#f56565' }} />
-              <span>감사합니다</span>
-              <Heart size={16} style={{ color: '#f56565' }} />
-            </div>
-            <div className="couple-names-final">
-              김제현 · 김민경
             </div>
           </div>
         </div>

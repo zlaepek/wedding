@@ -249,81 +249,392 @@ body {
 }
 
 .contact-btn.phone {
-  background: #48bb78;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .contact-btn.sms {
-  background: #4299e1;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
 }
 
-/* 지도 앱 버튼 */
-.map-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+/* 지도 앱 버튼 - 한줄 레이아웃 */
+.map-buttons-row {
+  display: flex;
+  gap: 6px;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.map-btn-row {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.map-btn-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.map-btn-row:hover::before {
+  left: 100%;
+}
+
+.map-btn-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-btn-row.kakao {
+  background: linear-gradient(135deg, #fee500 0%, #f9d71c 100%);
+  color: #2c1810;
+}
+
+.map-btn-row.naver {
+  background: linear-gradient(135deg, #03c75a 0%, #029d47 100%);
+  color: white;
+}
+
+.map-btn-row.tmap {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  color: white;
+}
+
+.map-btn-row.google {
+  background: linear-gradient(135deg, #4285f4 0%, #3367d6 100%);
+  color: white;
+}
+
+/* RSVP 스타일 */
+.rsvp-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.rsvp-message {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.rsvp-form {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #7eb3d3;
+  box-shadow: 0 0 0 3px rgba(126, 179, 211, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.radio-item:hover {
+  background: rgba(126, 179, 211, 0.05);
+  border-color: rgba(126, 179, 211, 0.3);
+}
+
+.radio-item input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #cbd5e0;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radio-item input[type="radio"]:checked + .radio-custom {
+  border-color: #7eb3d3;
+  background: #7eb3d3;
+}
+
+.radio-item input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.radio-icon {
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.radio-item input[type="radio"]:checked ~ .radio-icon {
+  color: #7eb3d3;
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #7eb3d3 0%, #6da0c7 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.rsvp-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(126, 179, 211, 0.3);
+}
+
+.rsvp-success {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rsvp-success h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.rsvp-success p {
+  font-size: 0.9rem;
+  color: #718096;
+  word-break: keep-all;
+}
+
+.rsvp-info {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.rsvp-info p {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+/* 연락하기 & 참석여부 통합 스타일 */
+.contact-rsvp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin: 2rem 0;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
 }
 
-.map-app-btn {
-  padding: 16px 20px;
+.contact-rsvp-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.contact-rsvp-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-rsvp-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #7eb3d3 0%, #6da0c7 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.contact-rsvp-content {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-rsvp-content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 0.3rem;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.contact-rsvp-content p {
+  font-size: 0.8rem;
+  color: #718096;
+  margin: 0;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.contact-rsvp-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #7eb3d3 0%, #6da0c7 100%);
+  color: white;
   border: none;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.map-app-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+.contact-rsvp-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(126, 179, 211, 0.3);
 }
 
-.map-btn {
-  padding: 16px 20px;
-  border: none;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* 연락하기 버튼 스타일 */
+.contact-info-buttons {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 12px;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 280px;
 }
 
-.map-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.map-btn.kakao {
-  background: #fee500;
-  color: #000;
-}
-
-.map-btn.naver {
-  background: #03c75a;
-  color: white;
-}
-
-.map-btn.tmap {
-  background: #ff6b6b;
-  color: white;
-}
-
-.map-btn.google {
-  background: #4285f4;
-  color: white;
+.contact-info-btn {
+  width: 100%;
+  min-width: 200px;
 }
 
 /* 구분선 */
@@ -390,12 +701,60 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 20px;
+  padding: 2rem;
+}
+
+.modal-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: calc(90vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  max-height: calc(90vh - 80px);
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn:active {
+  transform: translateX(-50%) scale(0.95);
 }
 
 .modal-content {
@@ -565,32 +924,31 @@ body {
 .map-container {
   position: relative;
   margin: 2rem 0;
-}
-
-.map-placeholder {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.map-placeholder::before {
-  content: '';
+.map-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 1rem;
+  color: white;
   pointer-events: none;
+}
+
+.map-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.map-info p {
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* 애니메이션 개선 */
@@ -631,6 +989,29 @@ body {
   width: 90%;
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.contact-modal-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  transform: scale(1.1);
 }
 
 .contact-modal-content {
@@ -700,11 +1081,12 @@ body {
 }
 
 .contact-btn.phone {
-  background: #48bb78;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .contact-btn.sms {
-  background: #4299e1;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
 }
 
 .contact-divider {
@@ -800,6 +1182,8 @@ body {
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-weight: 400;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 .wedding-info-card .wedding-info {
@@ -808,6 +1192,8 @@ body {
   line-height: 1.6;
   margin-bottom: 0.5rem;
   font-weight: 400;
+  word-break: keep-all;
+  white-space: normal;
 }
 
 /* 탭 스타일 */
@@ -899,9 +1285,17 @@ body {
 
 .share-buttons {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 12px;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 280px;
+}
+
+.share-buttons .wedding-button {
+  width: 100%;
+  min-width: 200px;
 }
 
 .thank-you-message {

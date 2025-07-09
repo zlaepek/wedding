@@ -17,8 +17,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
         <button 
           onClick={onClose}
-          className="modal-close"
-          style={{ top: '10px', right: '10px', position: 'absolute' }}
+          className="contact-modal-close"
         >
           <X size={20} />
         </button>
