@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Heart } from 'lucide-react';
 import ContactModal from '../ContactModal';
+import AccountModal from '../AccountModal';
 
 const ContactInfo = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
 
   const handleGoogleFormClick = () => {
     const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScM2vpBz4KMrGz8xXPpvwcpAP01fXZSkDIcOCWwIOrvjp1FfQ/viewform?usp=header';
@@ -26,6 +28,12 @@ const ContactInfo = () => {
             className="wedding-button contact-info-btn"
           >
             연락하기
+          </button>
+          <button 
+            onClick={() => setIsAccountModalOpen(true)}
+            className="wedding-button contact-info-btn"
+          >
+            마음 전하실 곳
           </button>
         </div>
         
@@ -52,6 +60,10 @@ const ContactInfo = () => {
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 
+      />
+      <AccountModal 
+        isOpen={isAccountModalOpen} 
+        onClose={() => setIsAccountModalOpen(false)} 
       />
     </section>
   );

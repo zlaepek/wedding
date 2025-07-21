@@ -28,7 +28,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="contact-section">
             <div className="contact-item">
               <div className="contact-name">
-                <span className="couple-icon">🤵</span>
+                <img src="/wedding/image/icons/groom.png" alt="신랑" className="couple-icon-img" />
                 신랑 김제현
               </div>
               <div className="contact-buttons">
@@ -49,7 +49,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             
             <div className="contact-item">
               <div className="contact-name">
-                <span className="couple-icon">👰</span>
+                <img src="/wedding/image/icons/bride.png" alt="신부" className="couple-icon-img" />
                 신부 김민경
               </div>
               <div className="contact-buttons">
