@@ -762,6 +762,87 @@ body {
   transform: translateX(-50%) scale(0.95);
 }
 
+/* 모달 네비게이션 버튼 */
+.modal-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1002;
+}
+
+.modal-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav-btn.prev {
+  left: 20px;
+}
+
+.modal-nav-btn.next {
+  right: 20px;
+}
+
+/* 모달 이미지 페이지 표시기 */
+.modal-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  z-index: 1002;
+}
+
+/* 모달 이미지 전환 애니메이션 업데이트 */
+.modal-image {
+  width: 100%;
+  height: 100%;
+  max-height: calc(90vh - 80px);
+  object-fit: contain;
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.modal-image.transitioning {
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .modal-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .modal-nav-btn.prev {
+    left: 10px;
+  }
+  
+  .modal-nav-btn.next {
+    right: 10px;
+  }
+  
+  .modal-indicator {
+    bottom: 15px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
 .modal-content {
   max-width: 90vw;
   max-height: 90vh;

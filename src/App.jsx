@@ -12,6 +12,8 @@ import PhotoModal from './components/PhotoModal';
 const WeddingInvitation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
+  const [galleryPhotos, setGalleryPhotos] = useState([]);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -71,7 +73,11 @@ const WeddingInvitation = () => {
       <MainCover isVisible={isVisible} />
       <Invitation timeUntilWedding={timeUntilWedding} />
       <PhotoGallery 
-        setSelectedPhoto={setSelectedPhoto} 
+        setSelectedPhoto={(photo, index, photos) => {
+          setSelectedPhoto(photo);
+          setSelectedPhotoIndex(index);
+          setGalleryPhotos(photos);
+        }} 
       />
       <ContactInfo />
       <Location handleMapApp={handleMapApp} />
@@ -82,7 +88,16 @@ const WeddingInvitation = () => {
       />
       
       {selectedPhoto && (
-        <PhotoModal photo={selectedPhoto} onClose={() => setSelectedPhoto(null)} />
+        <PhotoModal 
+          photo={selectedPhoto} 
+          onClose={() => setSelectedPhoto(null)}
+          photos={galleryPhotos}
+          currentIndex={selectedPhotoIndex}
+          onNavigate={(newIndex) => {
+            setSelectedPhotoIndex(newIndex);
+            setSelectedPhoto(galleryPhotos[newIndex].src);
+          }}
+        />
       )}
     </div>
   );

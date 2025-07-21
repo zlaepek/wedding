@@ -53,7 +53,7 @@ const PhotoGallery = ({ setSelectedPhoto }) => {
             <div 
               key={photo.id} 
               className={`gallery-item fade-in delay-${(index % 3) + 1}`}
-              onClick={() => setSelectedPhoto(photo.src)}
+              onClick={() => setSelectedPhoto(photo.src, index, photos)}
             >
               <img 
                 src={photo.src} 
