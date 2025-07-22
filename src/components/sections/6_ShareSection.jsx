@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { Camera, Utensils, Car} from 'lucide-react';
 
 const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
-  const [activeTab, setActiveTab] = useState('photobooth');
+  const [activeTab, setActiveTab] = useState('dining');
 
   const tabs = [
-    { id: 'photobooth', label: '포토부스', icon: Camera },
+    //{ id: 'photobooth', label: '포토부스', icon: Camera },
     { id: 'dining', label: '식사안내', icon: Utensils },
     { id: 'parking', label: '주차안내', icon: Car }
   ];
 
   const tabContent = {
-    photobooth: {
+    /*photobooth: {
       title: '포토부스',
       message: '웨딩홀 입구에서 포토부스를 운영합니다.\n소중한 순간을 기록해보세요.',
       info: ''//'운영시간: 오후 4:30 - 7:00\n위치: 가천컨벤션센터 5층 로비'
-    },
+    },*/
     dining: {
       title: '식사 안내',
       message: '결혼식 후 스테이크 정식을 준비했습니다.\n맛있는 식사와 함께 축하해 주세요.',
@@ -24,7 +24,7 @@ const ShareSection = ({ handleShare, copyToClipboard, copied }) => {
     parking: {
       title: '주차 안내',
       message: '지하 주차장을 무료로 이용하실 수 있습니다.\n주차권은 별도로 받으실 필요 없습니다.',
-      info: '주차위치: 지하 3층 주차장\n 주차요금: 무료'
+      info: '주차 위치: 지하 4층 주차장\n 주차요금: 무료'
     }
   };
 

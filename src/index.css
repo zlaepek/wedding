@@ -1167,8 +1167,8 @@ body {
 }
 
 .account-header .couple-icon-img {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
 }
 
 .contact-buttons {
@@ -1384,9 +1384,10 @@ body {
 }
 
 .parent-account .account-info {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
 }
 
 .parent-account .bank-name,
@@ -1395,13 +1396,41 @@ body {
 }
 
 .parent-account .copy-btn {
-  align-self: flex-end;
-  margin-top: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 @media (max-width: 480px) {
   .parents-accounts {
     grid-template-columns: 1fr;
+  }
+  
+  .parent-account .account-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .parent-account .bank-name {
+    font-size: 0.7rem;
+  }
+  
+  .parent-account .account-number {
+    font-size: 0.7rem;
+    flex: 1;
+    text-align: left;
+    margin-right: 8px;
+  }
+  
+  .parent-account .copy-btn {
+    margin-left: 0;
+    padding: 2px 6px;
+  }
+  
+  .account-header .couple-icon-img {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -1622,3 +1651,4 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
 }
+
