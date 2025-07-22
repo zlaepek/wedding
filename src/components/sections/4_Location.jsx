@@ -61,13 +61,6 @@ const Location = ({ handleMapApp }) => {
             </button>
             
             <button
-              onClick={() => handleMapApp('tmap')}
-              className="map-btn-row tmap"
-            >
-              티맵
-            </button>
-            
-            <button
               onClick={() => handleMapApp('googlemap')}
               className="map-btn-row google"
             >
