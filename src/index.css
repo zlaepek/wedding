@@ -1071,8 +1071,8 @@ body {
   background: white;
   border-radius: 16px;
   padding: 2rem;
-  max-width: 340px;
-  width: 90%;
+  max-width: 480px;
+  width: 95%;
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
@@ -1454,6 +1454,11 @@ body {
     width: 18px;
     height: 18px;
   }
+  
+  .contact-modal,
+  .account-modal {
+    width: 98%;
+  }
 }
 
 /* 계좌번호 모달 스타일 */
@@ -1461,8 +1466,8 @@ body {
   background: white;
   border-radius: 16px;
   padding: 2rem;
-  max-width: 380px;
-  width: 90%;
+  max-width: 480px;
+  width: 95%;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   animation: slideIn 0.3s ease-out;
