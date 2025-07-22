@@ -85,16 +85,10 @@ const AccountModal = ({ isOpen, onClose }) => {
                   />
                   <span className="account-title">{account.title}</span>
                 </div>
-                <div className="account-info">
+                <div className="account-info" onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}>
                   <span className="bank-name">{account.bank}</span>
                   <span className="account-number">{account.accountNumber}</span>
-                  <button
-                    onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}
-                    className="copy-btn"
-                  >
-                    {copiedAccount === account.id ? <Check size={14} /> : <Copy size={14} />}
-                    <span>{copiedAccount === account.id ? '복사됨' : '복사'}</span>
-                  </button>
+                  {copiedAccount === account.id && <span className="copied-text">복사됨!</span>}
                 </div>
               </div>
             ))}
@@ -105,15 +99,10 @@ const AccountModal = ({ isOpen, onClose }) => {
                 {accountData.filter(acc => acc.id.includes('groom-') && !acc.isMain).map((account) => (
                   <div key={account.id} className="account-item parent-account">
                     <div className="account-title">{account.title}</div>
-                    <div className="account-info">
+                    <div className="account-info" onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}>
                       <span className="bank-name">{account.bank}</span>
                       <span className="account-number">{account.accountNumber}</span>
-                      <button
-                        onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}
-                        className="copy-btn small"
-                      >
-                        {copiedAccount === account.id ? <Check size={12} /> : <Copy size={12} />}
-                      </button>
+                      {copiedAccount === account.id && <span className="copied-text small">복사됨!</span>}
                     </div>
                   </div>
                 ))}
@@ -124,15 +113,10 @@ const AccountModal = ({ isOpen, onClose }) => {
                 {accountData.filter(acc => acc.id.includes('bride-') && !acc.isMain).map((account) => (
                   <div key={account.id} className="account-item parent-account">
                     <div className="account-title">{account.title}</div>
-                    <div className="account-info">
+                    <div className="account-info" onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}>
                       <span className="bank-name">{account.bank}</span>
                       <span className="account-number">{account.accountNumber}</span>
-                      <button
-                        onClick={() => handleCopyAccount(`${account.bank} ${account.accountNumber}`, account.id)}
-                        className="copy-btn small"
-                      >
-                        {copiedAccount === account.id ? <Check size={12} /> : <Copy size={12} />}
-                      </button>
+                      {copiedAccount === account.id && <span className="copied-text small">복사됨!</span>}
                     </div>
                   </div>
                 ))}

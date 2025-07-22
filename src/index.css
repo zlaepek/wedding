@@ -1311,6 +1311,15 @@ body {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin: -4px -8px;
+}
+
+.account-info:hover {
+  background-color: rgba(126, 179, 211, 0.05);
 }
 
 .bank-name {
@@ -1324,6 +1333,17 @@ body {
   color: #2d3748;
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
+}
+
+.copied-text {
+  font-size: 0.75rem;
+  color: #7eb3d3;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.copied-text.small {
+  font-size: 0.7rem;
 }
 
 .copy-btn {
@@ -1388,6 +1408,8 @@ body {
   align-items: center;
   gap: 6px;
   flex-wrap: nowrap;
+  padding: 2px 4px;
+  margin: -2px -4px;
 }
 
 .parent-account .bank-name,
