@@ -81,13 +81,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <span>아버지 김상엽</span>
                   <div className="contact-buttons">
                     <button 
-                      onClick={() => handleCall('010-XXXX-XXXX')}
+                      onClick={() => handleCall('010-8846-7752')}
                       className="contact-btn phone"
                     >
                       <Phone size={12} />
                     </button>
                     <button 
-                      onClick={() => handleMessage('010-XXXX-XXXX')}
+                      onClick={() => handleMessage('010-8846-7752')}
                       className="contact-btn sms"
                     >
                       <MessageCircle size={12} />
@@ -98,13 +98,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <span>어머니 배상희</span>
                   <div className="contact-buttons">
                     <button 
-                      onClick={() => handleCall('010-XXXX-XXXX')}
+                      onClick={() => handleCall('010-3320-7752')}
                       className="contact-btn phone"
                     >
                       <Phone size={12} />
                     </button>
                     <button 
-                      onClick={() => handleMessage('010-XXXX-XXXX')}
+                      onClick={() => handleMessage('010-3320-7752')}
                       className="contact-btn sms"
                     >
                       <MessageCircle size={12} />
@@ -119,13 +119,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <span>아버지 김대환</span>
                   <div className="contact-buttons">
                     <button 
-                      onClick={() => handleCall('010-XXXX-XXXX')}
+                      onClick={() => handleCall('010-3360-0657')}
                       className="contact-btn phone"
                     >
                       <Phone size={12} />
                     </button>
                     <button 
-                      onClick={() => handleMessage('010-XXXX-XXXX')}
+                      onClick={() => handleMessage('010-3360-0657')}
                       className="contact-btn sms"
                     >
                       <MessageCircle size={12} />
@@ -136,13 +136,13 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <span>어머니 주영진</span>
                   <div className="contact-buttons">
                     <button 
-                      onClick={() => handleCall('010-XXXX-XXXX')}
+                      onClick={() => handleCall('010-3455-5093')}
                       className="contact-btn phone"
                     >
                       <Phone size={12} />
                     </button>
                     <button 
-                      onClick={() => handleMessage('010-XXXX-XXXX')}
+                      onClick={() => handleMessage('010-3455-5093')}
                       className="contact-btn sms"
                     >
                       <MessageCircle size={12} />
