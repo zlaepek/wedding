@@ -8,6 +8,7 @@ const PhotoGallery = ({ setSelectedPhoto }) => {
     const loadPhotos = async () => {
       try {
         const photoList = [
+          { id: 0, src: `${import.meta.env.BASE_URL}image/photos/시작페이지.png`, alt: '시작' },
           { id: 1, src: `${import.meta.env.BASE_URL}image/photos/2022-06 에버랜드.jpg`, alt: '에버랜드' },
           { id: 2, src: `${import.meta.env.BASE_URL}image/photos/2022-06 에버랜드(2).jpg`, alt: '에버랜드' },
           { id: 3, src: `${import.meta.env.BASE_URL}image/photos/2022-10.jpg`, alt: '2022년 10월' },
@@ -16,10 +17,12 @@ const PhotoGallery = ({ setSelectedPhoto }) => {
           { id: 6, src: `${import.meta.env.BASE_URL}image/photos/2023-05 속초(2).jpg`, alt: '속초 여행' },
           { id: 7, src: `${import.meta.env.BASE_URL}image/photos/2023-05 속초(3).jpg`, alt: '속초 여행' },
           { id: 8, src: `${import.meta.env.BASE_URL}image/photos/2023-08 제주도.jpg`, alt: '제주도 여행' },
-          { id: 9, src: `${import.meta.env.BASE_URL}image/photos/2023-12 송년회.jpg`, alt: '송년회' },
-          { id: 10, src: `${import.meta.env.BASE_URL}image/photos/2024-10 하늘공원.jpg`, alt: '하늘공원' },
-          { id: 11, src: `${import.meta.env.BASE_URL}image/photos/2024-12 농담곰.jpg`, alt: '농담곰' },
-          { id: 12, src: `${import.meta.env.BASE_URL}image/photos/2025-02 스키장.jpg`, alt: '스키장' }
+          { id: 9, src: `${import.meta.env.BASE_URL}image/photos/2023-10 포천 고양이.jpg`, alt: '포천' },
+          { id: 10, src: `${import.meta.env.BASE_URL}image/photos/2023-12 송년회.jpg`, alt: '송년회' },
+          { id: 11, src: `${import.meta.env.BASE_URL}image/photos/2024-10 하늘공원.jpg`, alt: '하늘공원' },
+          { id: 12, src: `${import.meta.env.BASE_URL}image/photos/2024-12 농담곰.jpg`, alt: '농담곰' },
+          { id: 13, src: `${import.meta.env.BASE_URL}image/photos/2025-02 스키장.jpg`, alt: '스키장' },
+          
         ];
         
         setPhotos(photoList);
