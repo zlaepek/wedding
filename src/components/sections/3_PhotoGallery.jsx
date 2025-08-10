@@ -22,7 +22,7 @@ const PhotoGallery = ({ setSelectedPhoto }) => {
           { id: 11, src: `${import.meta.env.BASE_URL}image/photos/2024-10 하늘공원.jpg`, alt: '하늘공원' },
           { id: 12, src: `${import.meta.env.BASE_URL}image/photos/2024-12 농담곰.jpg`, alt: '농담곰' },
           { id: 13, src: `${import.meta.env.BASE_URL}image/photos/2025-02 스키장.jpg`, alt: '스키장' },
-          
+          { id: 14, src: `${import.meta.env.BASE_URL}image/photos/Character.png`, alt: 'Character' },
         ];
         
         setPhotos(photoList);
